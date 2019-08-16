@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 
 # __name__ is a special variable that gets as value the string "__main__" when you’re executing the script
 app = Flask(__name__)
@@ -19,7 +19,7 @@ stores = [
 
 @app.route('/')
 def home():
-    return str(dir(app))
+    return render_template('index.html')
 
 
 # POST /store data: {name:}
