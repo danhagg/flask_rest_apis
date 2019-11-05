@@ -1,1 +1,0 @@
-# A web server is designed to accept incoming web requests
