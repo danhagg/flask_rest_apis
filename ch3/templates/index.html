@@ -1,0 +1,29 @@
+<html>
+	// js always running on browser and has to call your API to retrieve data from it and show on website
+<head>
+	<!-- calling the api from js -->
+<script type="text/javascript">
+	function httpGetAsync(theUrl, callback) {
+	    var xmlHttp = new XMLHttpRequest();
+	    xmlHttp.onreadystatechange = function() {
+	        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+	            callback(xmlHttp.responseText);
+	    }
+	    xmlHttp.open("GET", theUrl, true); // true for asynchronous
+	    xmlHttp.send(null);
+	}
+
+	// function callback receives the response content (some json)
+	httpGetAsync('http://127.0.0.1:5000/store', function(response) {
+		alert(response);
+	})
+</script>
+</head>
+<body>
+
+<div id="myElement">
+	Hello, world!
+</div>
+
+</body>
+</html>
