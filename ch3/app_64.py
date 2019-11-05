@@ -1,5 +1,5 @@
 # jsonify is a method (lowercase) not a class
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 
 app = Flask(__name__)
 
@@ -22,6 +22,10 @@ stores = [
 # Javascript does not understand Python dictionaries but does understand strings.
 # jsonift converts dictionaries to json
 # CANNOT return a list
+
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 
 # POST /store data: {name:}
